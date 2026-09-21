@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Escape the Hacker Room</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="terminal-container" id="mainContainer">
+      <header>
+        <h1>&gt; ESCAPE THE HACKER ROOM_</h1>
+        <p class="subtitle">
+          Löse alle Sicherheitsprüfungen, um das System zu entsperren.
+        </p>
+        <div class="status-bar">
+          <span>Status: <strong id="statusText">GESPERRT</strong></span>
+        </div>
+      </header>
+
+      <section class="task-card active" id="task1">
+        <h2>Aufgabe 1: Zugangscode knacken</h2>
+        <p>Errate den geheimen Zahlencode zwischen 1 und 20.</p>
+        <p>Verbleibende Versuche: <span id="attemptsText">5</span></p>
+        <div class="input-group">
+          <input
+            type="number"
+            id="codeGuessInput"
+            placeholder="Zahl eingeben"
+            min="1"
+            max="20"
+          />
+          <button id="btnCheckCode">Code prüfen</button>
+        </div>
+        <p class="message" id="msgTask1"></p>
+      </section>
+
+      <section class="task-card locked" id="task2">
+        <h2>Aufgabe 2: Passwortprüfung</h2>
+        <p>Gib das geheime Master-Passwort ein (mind. 8 Zeichen).</p>
+        <div class="input-group">
+          <input
+            type="password"
+            id="passwordInput"
+            placeholder="Passwort eingeben"
+          />
+          <button id="btnCheckPassword" disabled>Passwort prüfen</button>
+        </div>
+        <p class="message" id="msgTask2"></p>
+      </section>
+
+      <section class="task-card locked" id="task3">
+        <h2>Aufgabe 3: Sicherheitssequenz</h2>
+        <p>Gib eine Zahl zwischen 1 und 10 ein, um die Sequenz zu starten.</p>
+        <div class="input-group">
+          <input
+            type="number"
+            id="sequenceInput"
+            placeholder="Zahl (1-10)"
+            min="1"
+            max="10"
+          />
+          <button id="btnStartSequence" disabled>Sequenz starten</button>
+        </div>
+        <p class="sequence-output" id="seqOutput"></p>
+        <p class="message" id="msgTask3"></p>
+      </section>
+
+      <div class="win-screen hidden" id="winScreen">
+        <h2 class="glitch-text">SYSTEM UNLOCKED</h2>
+        <p>Zugriff erfolgreich gewährt. Du hast den Hacker Room verlassen!</p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
